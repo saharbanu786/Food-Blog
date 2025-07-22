@@ -12,12 +12,12 @@ export default function AddFoodRecipe() {
     const onHandleSubmit = async (e) => {
         e.preventDefault()
         console.log(recipeData)
-        await axios.post("http://localhost:5000/recipe", recipeData,{
-            headers:{
-                'Content-Type':'multipart/form-data',
-                'authorization':'bearer '+localStorage.getItem("token")
-            }
-        })
+await axios.post(`${import.meta.env.VITE_API_BASE_URL}/recipe`, recipeData, {
+    headers: {
+        'Content-Type': 'multipart/form-data',
+        'authorization': 'bearer ' + localStorage.getItem("token")
+    }
+})
             .then(() => navigate("/"))
     }
     
