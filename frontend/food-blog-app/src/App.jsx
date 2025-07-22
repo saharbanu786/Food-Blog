@@ -25,8 +25,9 @@ const getMyRecipes = async () => {
 }
 
 const getFavRecipes = () => {
-  return JSON.parse(localStorage.getItem("fav"))
+  return JSON.parse(localStorage.getItem("fav")) || []
 }
+
 
 const getRecipe = async ({ params }) => {
   let recipe;
